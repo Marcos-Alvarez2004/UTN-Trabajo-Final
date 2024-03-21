@@ -1,0 +1,41 @@
+<main class="main-productos">
+  <section class="sec-productos">
+    <div><h1 class="title-productos">Sus publicaciones</h1></div>
+    <div class="text-productos">
+      <p>Hola
+        <strong>{{usuario}}</strong>. Aca se encuentran sus publicaciones</p>
+      <a href="/admin/login/logout"><i
+          class="fa-solid fa-power-off cerrar-session"
+        ></i></a>
+      <a href="/admin/productos/agregar"><i
+          class="fa-solid fa-plus agregar"
+        ></i></a>
+    </div>
+  </section>
+
+  <section class="sec-productos-container">
+    {{#each productos}}
+
+      <article class="card-productos">
+
+        <div class="img-container">
+          <td>{{{imagen}}}</td>
+        </div>
+        <h3>{{titulo}}</h3>
+        <p>$ {{precio}}</p>
+        <div class="container-cuerpo">
+          <p class="cuerpo-productos">{{cuerpo}}</p>
+        </div>
+
+        <div class="container-btn">
+          <a href="/admin/productos/modificar/{{id}}" title="Editar"><i
+              class="fa-solid fa-pen modificar"
+            ></i></a>
+          <a href="/admin/productos/eliminar/{{id}}" title="Eliminar"><i
+              class="fa-solid fa-trash eliminar"
+            ></i></a>
+        </div>
+      </article>
+    {{/each}}
+  </section>
+</main>

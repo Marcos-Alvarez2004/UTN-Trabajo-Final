@@ -1,0 +1,50 @@
+<section class="sec-login">
+  <h1 class="title-productos">Modificar Producto</h1>
+  <form
+    class="form-login"
+    action="/admin/productos/modificar"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <input type="hidden" value="{{producto.id}}" name="id" />
+    <div>
+      <input
+        class="input-login input-modificar"
+        type="text"
+        value="{{producto.titulo}}"
+        name="titulo"
+        required
+      />
+    </div>
+    <div>
+      <input
+        class="input-login input-modificar"
+        type="text"
+        value="{{producto.precio}}"
+        name="precio"
+        required
+      />
+    </div>
+    <div>
+      <textarea
+        class="input-login input-modificar"
+        name="cuerpo"
+        minlength="1"
+        maxlength="100"
+        required
+      >{{producto.cuerpo}}</textarea>
+    </div>
+    <div class="container-input-img">
+      <label>IMAGEN: <input type="file" name="imagen" id="imagen" /></label>
+      <label>
+        <input type="checkbox" name="img_delete" id="img_delete" value="1" />
+        ELIMINAR IMAGEN?
+        <input type="hidden" name="img_original" value="{{producto.img_id}}" />
+      </label>
+    </div>
+    <button class="btn" type="submit">Guardar</button>
+  </form>
+  {{#if error}}
+    <p style="color: red;">{{message}}</p>
+  {{/if}}
+</section>

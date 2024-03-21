@@ -1,0 +1,27 @@
+<section class="sec-login">
+  <form action="/admin/login" method="post" class="form-login">
+    <h1 class="title-login">App Social</h1>
+    <div>
+      <input
+        class="input-login"
+        type="text"
+        placeholder="Usuario"
+        name="usuario"
+        required
+      />
+    </div>
+    <div>
+      <input
+        class="input-login"
+        type="password"
+        placeholder="Contraseña"
+        name="password"
+        required
+      />
+    </div>
+    <button class="btn" type="submit">INGRESAR</button>
+  </form>
+</section>
+{{#if error}}
+  <p class="error-login">Usuario y / o contraseña incorrecto.</p>
+{{/if}}
